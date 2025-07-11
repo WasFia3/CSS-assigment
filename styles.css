@@ -1,0 +1,491 @@
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Main Container Layout - CSS Grid */
+.container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Search Panel Styling - Flexbox */
+.search-panel {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-panel h2 {
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+    font-size: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #495057;
+}
+
+.form-group input,
+.form-group select {
+    padding: 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.filter-btn {
+    background-color: #0d6efd;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.filter-btn:hover {
+    background-color: #0b5ed7;
+}
+
+.clear-btn {
+    display: inline-block;
+    text-align: center;
+    margin-top: 1rem;
+    color: #0d6efd;
+    text-decoration: none;
+    width: 100%;
+}
+
+/* Product Grid Layout - CSS Grid */
+.product-grid {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Product Card Styling - Flexbox */
+.product-card {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+    height: 180px;
+    background-color: #f1f1f1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.product-details {
+    padding: 1rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-id {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 0.5rem;
+}
+
+.product-name-container {
+    position: relative;
+    margin-bottom: 0.5rem;
+}
+
+.product-name {
+    font-weight: bold;
+    color: #2c3e50;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0.2rem 0;
+}
+
+.product-name:hover {
+    background-color: #f8f9fa;
+    border-radius: 4px;
+}
+
+/* Tooltip Styling */
+.tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 250px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.product-name:focus + .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tooltip h2 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.low-stock {
+    color: #dc3545;
+}
+
+.in-stock {
+    color: #28a745;
+}
+
+.tooltip p {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+/* Category Badge */
+.category-badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    color: white;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+    align-self: flex-start;
+}
+
+/* Product Price */
+.product-price {
+    font-weight: bold;
+    color: #dc3545;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+/* Product Actions - Flexbox */
+.product-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: auto;
+}
+
+.view-btn,
+.add-to-cart-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.view-btn {
+    background-color: #6c757d;
+    color: white;
+}
+
+.view-btn:hover {
+    background-color: #5a6268;
+}
+
+.add-to-cart-btn {
+    background-color: #28a745;
+    color: white;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #218838;
+}
+
+/* Pagination Styling - Flexbox */
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1.5rem;
+    border-top: 1px solid #dee2e6;
+}
+
+.page-btn {
+    padding: 0.5rem 1rem;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    color: #0d6efd;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.page-btn:hover {
+    background-color: #e9ecef;
+}
+
+/* No Results Message */
+.no-results {
+    text-align: center;
+    padding: 2rem;
+    color: #6c757d;
+    grid-column: 1 / -1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* التخطيط العام */
+.cart-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.continue-shopping {
+    color: #0066cc;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.empty-cart {
+    text-align: center;
+    padding: 50px;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+.empty-cart p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #0066cc;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+/* عناصر السلة */
+.cart-form {
+    margin-top: 20px;
+}
+
+.cart-items {
+    margin-bottom: 30px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 15px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.item-image {
+    width: 100px;
+    margin-left: 20px;
+}
+
+.item-image img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.item-details {
+    flex: 1;
+}
+
+.item-details h3 {
+    margin: 0 0 5px 0;
+    font-size: 18px;
+}
+
+.category-badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 4px;
+    color: white;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.price {
+    font-weight: bold;
+    color: #333;
+    margin: 5px 0;
+}
+
+.item-actions {
+    display: flex;
+    align-items: center;
+    margin: 0 20px;
+}
+
+.item-actions input {
+    width: 60px;
+    padding: 8px;
+    margin-left: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.remove-btn {
+    color: #dc3545;
+    text-decoration: none;
+    padding: 8px 12px;
+    border: 1px solid #dc3545;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.remove-btn:hover {
+    background: #dc3545;
+    color: white;
+}
+
+.item-subtotal {
+    font-weight: bold;
+    font-size: 16px;
+    min-width: 100px;
+    text-align: center;
+}
+
+/* ملخص السلة */
+.cart-summary {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.summary-total h3 {
+    margin: 0 0 20px 0;
+    font-size: 20px;
+    color: #333;
+}
+
+.summary-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.update-btn, .checkout-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.update-btn {
+    background: #6c757d;
+    color: white;
+}
+
+.checkout-btn {
+    background: #28a745;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    line-height: 40px;
+}
+
+
+
+
+
+    .success-box {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            display: inline-block;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        .checkmark {
+            color: #4CAF50;
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
